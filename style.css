@@ -273,18 +273,35 @@ section {
     cursor: pointer;
 }
 
-.copyrightText {
-    padding: 8px 40px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    text-align: center;
+#footer{
+    background-color: #777;
+    height: 50px;
+    position: relative;
+    position: bottom;
 }
-
-.copyrightText p {
-    color: #333;
+.hide{
+    height: 70px;
 }
-
-.copyrightText a {
-    color: #14d8ea;
-    font-weight: 500;
+.logo-footer{
+    color: #000000;
+    font-weight: 700;
+    font-size: 2em;
     text-decoration: none;
+}
+#informa{
+    height: 150px;
+    width: 150px;
+}
+
+.txt{
+    font-family: cursive;
+    font-size: small;
+}
+#cuerpo{
+    padding-left: 2%;
+}
+.titulo{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
