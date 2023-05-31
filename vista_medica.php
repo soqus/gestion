@@ -59,15 +59,17 @@ if (!isset($_SESSION['usuario'])) {
             ?>
         </div>
     </header>
-
+/*Menu lateral derecho */
     <div class="menu_lateral">
-    <ul  >
+    <ul>
     <li><a href="#" data-target="php/horas_agendadas">Horas Agendadas</a></li>
       <li><a href="#" data-target="php/pacientes">Pacientes</a></li>
       <li><a href="#" data-target="citas">Citas</a></li>
       <li><a href="#" data-target="registro">Registrar Usuario</a></li>
     </ul>
   </div>
+
+  /*Cuacdro de contenido a la derecha del menu */
   <div class="contenido" id="contenido">
     <!-- Contenido inicial -->
     <h2>Bienvenido</h2>

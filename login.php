@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['usuario'])) {
-    header("location: menu_doc.php");
+    header("location: vista_medica.php");
 }
 ?>
 

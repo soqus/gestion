@@ -1,3 +1,7 @@
+
+/*No logré vincular en documentos apartes el script y el css asi que lo puse dentro del html. Para modificar estilos
+de este archivo, modificarlos en el mismo html */
+
 <?php
 session_start();
 ?>
@@ -44,7 +48,7 @@ session_start();
         }
 
         .table-container {
-        max-height: 300px; /* Ajusta la altura máxima según tus necesidades */
+        max-height: 300px;
         overflow-y: auto;
     }
 

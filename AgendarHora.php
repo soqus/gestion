@@ -52,6 +52,7 @@ session_start();
     </div>
   </header>
   <section>
+    /*falta terminarlo */
   <form action="" method="POST">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>

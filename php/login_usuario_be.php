@@ -1,3 +1,5 @@
+/*metodo para logear a un usuario, no tocar xD */
+
 <?php
 session_start();
 include 'conexion_be.php';

@@ -1,3 +1,8 @@
+
+/*Pagina utilizada para hacer pruebas  :3, no tomar en cuenta  */
+
+
+
 <?php
 session_start();
 ?>

@@ -1,3 +1,7 @@
+
+
+/*Metodo para mostrar una tabla con las hoas agendadas en el sistema. Intente hacer los estilos y el script en archivos apartes pero me daba
+error, por eso estan escritos en el mismo html*/
 <?php
 session_start();
 ?>
@@ -12,6 +16,8 @@ session_start();
     <title>Menu de horas</title>
     <script src=funciones.js></script>
 </head>
+
+/*estilos*/
 <style>
     .tabla-formato {
     width: 100%;

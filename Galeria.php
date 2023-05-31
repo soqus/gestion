@@ -38,7 +38,7 @@ session_start();
         <div>
             <?php
             
-
+            /*if para mostrar boton de cerrar sesion e iniciar sesion segun corresponda */
             if(isset($_SESSION['usuario'])) {
                 // Sesión activa, mostrar botón "Cerrar sesión"
                 echo '<button onclick="cerrar_sesion()">Cerrar sesión</button>';

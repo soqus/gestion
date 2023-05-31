@@ -1,3 +1,7 @@
+
+/*Metodo utilizado para realizar el filtro en la seccion pacientes*/
+
+
 <?php
 include 'conexion_be.php';
 
@@ -9,6 +13,8 @@ if (isset($_POST['rut'])) {
     $resultado = mysqli_query($conexion, $consulta);
 
     // Genera la tabla filtrada
+
+    /*Para darle estilo a esta tabla tienen que ponerle el mismo identificador a las 2 partes. a la tabla en el if y a la tabla del else.*/
     while ($row = mysqli_fetch_assoc($resultado)) {
         ?>
         <tr>
