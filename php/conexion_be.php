@@ -1,6 +1,4 @@
 
-/*Coneccion a la base de datos */
-
 <?php
 
     $conexion = mysqli_connect("localhost", "root", "", "podoclear");

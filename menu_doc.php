@@ -77,7 +77,6 @@ if (!isset($_SESSION['usuario'])) {
             $resultado = mysqli_query($conexion, $consulta);
             while ($row = mysqli_fetch_assoc($resultado)) {
                 ?>
-                /*tabla que muestra las horas agendadas */
                 <tr>
                     <td>
                         <?php echo $row['ID']; ?>

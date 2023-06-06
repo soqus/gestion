@@ -1,4 +1,4 @@
-/*metodo para regstrar horas a la base de datos, no tocar xD */
+
 
 <?php
 

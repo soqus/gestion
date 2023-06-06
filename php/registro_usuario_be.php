@@ -1,5 +1,4 @@
 
-/*metodo para registrar usuarios a la BD, no tocar */
 <?php
 include 'conexion_be.php';
 

@@ -48,7 +48,6 @@ session_start();
             ?>
         </div>
     </header>
-            /*Apartado de registro de usuario. */
     <div class="card">
         <div class="register-section">
             <h2>Registrar nuevo usuario</h2>

@@ -1,7 +1,3 @@
-
-/*Metodo utilizado para realizar el filtro en la seccion pacientes*/
-
-
 <?php
 include 'conexion_be.php';
 
@@ -14,7 +10,7 @@ if (isset($_POST['rut'])) {
 
     // Genera la tabla filtrada
 
-    /*Para darle estilo a esta tabla tienen que ponerle el mismo identificador a las 2 partes. a la tabla en el if y a la tabla del else.*/
+    //Para darle estilo a esta tabla tienen que ponerle el mismo identificador a las 2 partes. a la tabla en el if y a la tabla del else.
     while ($row = mysqli_fetch_assoc($resultado)) {
         ?>
         <tr>
@@ -22,7 +18,8 @@ if (isset($_POST['rut'])) {
             <td><?php echo $row['APELLIDO']; ?></td>
             <td><?php echo $row['NOMBRE']; ?></td>
             <td><?php echo $row['EDAD']; ?></td>
-            <td><div>kkk</div></td>
+            <td><button class="ver-ficha-btn">Ver Ficha</button>
+</td>
         </tr>
         <?php
     }
@@ -39,7 +36,7 @@ if (isset($_POST['rut'])) {
             <td><?php echo $row['APELLIDO']; ?></td>
             <td><?php echo $row['NOMBRE']; ?></td>
             <td><?php echo $row['EDAD']; ?></td>
-            <td><div>kkk</div></td>
+            <td>a</td>
         </tr>
         <?php
     }

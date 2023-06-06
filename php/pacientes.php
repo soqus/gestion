@@ -1,7 +1,3 @@
-
-/*No logré vincular en documentos apartes el script y el css asi que lo puse dentro del html. Para modificar estilos
-de este archivo, modificarlos en el mismo html */
-
 <?php
 session_start();
 ?>
@@ -18,28 +14,39 @@ session_start();
     <script>
         $(document).ready(function () {
             $('#form-filtrar').on('submit', function (event) {
-                event.preventDefault(); // Evita que se realice la acción por defecto del formulario (enviar y recargar la página)
-
-                // Obtiene los datos del formulario
+                event.preventDefault();
                 var formData = $(this).serialize();
-
-                // Realiza la solicitud AJAX
                 $.ajax({
-                    url: 'php/filtrar.php', // URL del archivo PHP que procesará los datos del formulario
-                    type: 'POST', // Método HTTP utilizado
-                    data: formData, // Datos del formulario enviados al servidor
+                    url: 'php/filtrar.php',
+                    type: 'POST',
+                    data: formData,
                     success: function (response) {
-                        // Se ejecuta cuando la solicitud AJAX se ha completado exitosamente
-                        $('#tabla-body').html(response); // Reemplaza el contenido del cuerpo de la tabla con la respuesta del servidor
+                        $('#tabla-body').html(response);
                     },
                     error: function (xhr, status, error) {
-                        // Se ejecuta si ocurre un error durante la solicitud AJAX
-                        console.log(error); // Muestra el mensaje de error en la consola del navegador
+                        console.log(error);
+                    }
+                });
+            });
+
+            $('.form-ficha').on('submit', function (event) {
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: 'php/ficha_paciente.php',
+                    type: 'POST',
+                    data: formData,
+                    success: function (response) {
+                        // Hacer algo con la respuesta si es necesario
+                        // Por ejemplo, mostrar la página "ficha_paciente.php" en una nueva pestaña:
+                        $('#tabla-body').html(response);
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error);
                     }
                 });
             });
         });
-
     </script>
     <style>
         .tabla-formato {
@@ -48,14 +55,15 @@ session_start();
         }
 
         .table-container {
-        max-height: 300px;
-        overflow-y: auto;
-    }
+            max-height: 300px;
+            overflow-y: auto;
+            position: relative;
+        }
 
-  .table-scroll {
-    overflow: auto;
-    max-height: 100%;
-  }
+        .table-scroll {
+            overflow: auto;
+            max-height: 100%;
+        }
 
         .tabla-formato th,
         .tabla-formato td {
@@ -67,42 +75,48 @@ session_start();
         .tabla-formato th {
             background-color: #f2f2f2;
         }
-    </style>
 
+        .btn-right {
+            position: absolute;
+            right: 150px;
+            transform: translateY(-100%);
+        }
+    </style>
 </head>
 
 <body>
     <div class="table_container">
         <form id="form-filtrar" method="POST">
-            <input type="text" name="rut" placeholder="Ingrese el Rut">
+            <input id="rut_ficha" type="text" name="rut" placeholder="Ingrese el Rut">
             <button type="submit" id="filtrar">Filtrar</button>
+        </form>
+        <form action="php/nuevo_paciente.php">
+            <button type="submit" id="nuevo_paciente" class="btn-right">Nuevo Paciente</button>
         </form>
 
         <div class="table-container">
-                <table id="tabla" class="tabla-formato">
-                    <thead>
-                        <th>Rut</th>
-                        <th>Apellido</th>
-                        <th>Nombre</th>
-                        <th>Edad</th>
-                        <th>-----</th>
-
-                    </thead>
-                    <tbody id="tabla-body">
-                        <?php
-                        include 'conexion_be.php';
-                        $consulta = "SELECT RUT, NOMBRE, APELLIDO, EDAD FROM pacientes";
-                        $resultado = mysqli_query($conexion, $consulta);
-                        while ($row = mysqli_fetch_assoc($resultado)) {
-                            ?>
-                            <tr>
+            <table id="tabla" class="tabla-formato">
+                <thead>
+                    <th>Rut</th>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Ficha</th>
+                </thead>
+                <tbody id="tabla-body">
+                    <?php
+                    include 'conexion_be.php';
+                    $consulta = "SELECT RUT, NOMBRE, APELLIDO, EDAD FROM pacientes";
+                    $resultado = mysqli_query($conexion, $consulta);
+                    while ($row = mysqli_fetch_assoc($resultado)) {
+                        ?>
+                        <tr>
+                            <form class="form-ficha" action="ficha_paciente.php" method="POST">
                                 <td>
-                                    <?php
-                                    $rut = $row['RUT'];
-                                    echo $rut ?>
+                                    <input type="text" id="rut_ficha" disabled name="rut_ficha" value="<?php echo $row['RUT']; ?>">
                                 </td>
                                 <td>
-                                    <?php echo $row['APELLIDO']; ?>
+                                    <input type="text" disabled value="<?php echo $row['APELLIDO']; ?>">
                                 </td>
                                 <td>
                                     <?php echo $row['NOMBRE']; ?>
@@ -110,18 +124,15 @@ session_start();
                                 <td>
                                     <?php echo $row['EDAD']; ?>
                                 </td>
-                                <td>
-                                    <div>kkk</div>
-                                </td>
-                            </tr>
-                            <?php
-                        }
-                        ?>
-
-                    </tbody>
-
-                </table>
-            </div>
+                                <td><button type="submit">Ver ficha</button></td>
+                            </form>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
 </body>
 
 </html>
