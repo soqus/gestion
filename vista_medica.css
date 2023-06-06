@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins: 200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+p {
+    font-weight: 300;
+    color: #111;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("img/pexels-karolina-grabowska-7195369.jpg");
+    background-size: cover;
+}
+
+.AgendarHora {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("img/pexels-karolina-grabowska-7195369.jpg");
+    background-size: cover;
+}
+
+
+
+
+.banner .content {
+    max-width: 900px;
+    text-align: center;
+}
+
+.banner .content h2 {
+    font-size: 5em;
+    color: #fff;
+}
+
+.banner .content p {
+    font-size: 1em;
+    color: #fff;
+}
+
+.btn {
+    font-size: 1em;
+    color: #fff;
+    background: #14d8ea;
+    display: inline-block;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+.btn:hover {
+    letter-spacing: 6px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+
+header.sticky {
+    background: #fff;
+    padding: 10px 100px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+header .logo {
+    color: #fff;
+    font-weight: 700;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+header.sticky .logo {
+    color: #111;
+}
+
+header .logo span {
+    color: #00dffc;
+}
+
+
+label.error {
+    color: darkred;
+}
+
+input.error,
+select,
+textarea {
+
+    border: 1px solid red;
+
+
+}
+
+header .navigation {
+    position: relative;
+    display: flex;
+    margin: 0;
+}
+
+header .navigation li {
+    list-style: none;
+    margin-left: 30px;
+}
+
+header .navigation li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 300;
+}
+
+header.sticky .navigation li a {
+    color: #111;
+}
+
+header .navigation li a:hover {
+    color: #14d8ea;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu_lateral {
+    background-color: #f2f2f2;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 15%;
+  }
+  
+  .menu_lateral ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu_lateral li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .menu_lateral li:last-child {
+    border-bottom: none;
+  }
+  
+  .menu_lateral li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    border: 3px solid black;
+    padding: 10px;
+  }
+  
+  .menu_lateral li a:hover {
+    background-color: #ccc;
+  }
+  
+
+  .contenido {
+    margin-left: 210px; /* Ajusta el margen para evitar que se solape con el menú */
+    margin-top: 10%;
+    margin-right: 20px;
+    height: 500px;
+    padding: 5%;
+    
+    border: 3px solid #111;
+
+  }
