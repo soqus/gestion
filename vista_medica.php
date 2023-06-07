@@ -61,12 +61,11 @@ if (!isset($_SESSION['usuario'])) {
     </header>
     <div class="menu_lateral">
     <ul>
-    <li><a href="#" data-target="php/horas_agendadas">Horas Agendadas</a></li>
-      <li><a href="#" data-target="php/pacientes">Pacientes</a></li>
-      <li><a href="#" data-target="registro">Registrar Usuario</a></li>
+    <li><a href="#" class="btn btn-primary" data-target="php/horas_agendadas">Horas Agendadas</a></li>
+      <li><a href="#" class="btn btn-primary" data-target="php/pacientes">Pacientes</a></li>
+      <li><a href="#" class="btn btn-primary"data-target="registro">Registrar Usuario</a></li>
     </ul>
   </div>
-
 
   <div class="contenido" id="contenido">
     <!-- Contenido inicial -->
