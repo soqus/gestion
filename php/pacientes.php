@@ -56,7 +56,7 @@ session_start();
         }
 
         .table-container {
-            max-height: 500px;
+            max-height: 300px;
             overflow-y: auto;
             position: relative;
         }
@@ -71,13 +71,13 @@ session_start();
             padding: 8px;
             text-align: left;
             border-bottom: 1px solid #ddd;
-            background-color:aquamarine;
+            
             
         }
 
         .tabla-formato th {
             background-color: #f2f2f2;
-            background-color:aquamarine;
+            
         }
 
         .btn-right {
@@ -95,7 +95,7 @@ session_start();
             <button type="submit" id="filtrar">Filtrar</button>
         </form>
         <form action="php/nuevo_paciente.php">
-            <button type="submit" id="nuevo_paciente" class="btn btn-right">Nuevo Paciente</button>
+            <button type="submit" id="nuevo_paciente" class="btn-right">Nuevo Paciente</button>
         </form>
 
         <div class="table-container">
