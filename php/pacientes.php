@@ -52,11 +52,10 @@ session_start();
         .tabla-formato {
             width: 100%;
             border-collapse: collapse;
-            padding: 10%;
         }
 
         .table-container {
-            max-height: 500px;
+            max-height: 300px;
             overflow-y: auto;
             position: relative;
         }
@@ -71,18 +70,15 @@ session_start();
             padding: 8px;
             text-align: left;
             border-bottom: 1px solid #ddd;
-            background-color:aquamarine;
-            
         }
 
         .tabla-formato th {
             background-color: #f2f2f2;
-            background-color:aquamarine;
         }
 
         .btn-right {
-            position:static;
-            right: 15px;
+            position: absolute;
+            right: 150px;
             transform: translateY(-100%);
         }
     </style>
@@ -95,7 +91,7 @@ session_start();
             <button type="submit" id="filtrar">Filtrar</button>
         </form>
         <form action="php/nuevo_paciente.php">
-            <button type="submit" id="nuevo_paciente" class="btn btn-right">Nuevo Paciente</button>
+            <button type="submit" id="nuevo_paciente" class="btn-right">Nuevo Paciente</button>
         </form>
 
         <div class="table-container">
@@ -128,7 +124,7 @@ session_start();
                                 <td>
                                     <?php echo $row['EDAD']; ?>
                                 </td>
-                                <td><button type="submit" >Ver ficha</button></td>
+                                <td><button type="submit">Ver ficha</button></td>
                             </form>
                         </tr>
                         <?php
