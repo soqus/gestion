@@ -188,11 +188,11 @@ body {
 
   .contenido {
     margin-left: 210px; /* Ajusta el margen para evitar que se solape con el menú */
-    margin-top: 10%;
-    margin-right: 20px;
-    height: 500px;
-    padding: 5%;
+    margin-top: 30%;
+    margin-right: 210px;
+    height: 700px;
+    padding: 40%;
     
-    border: 3px solid #111;
+    border: 5px solid #000000;
 
   }

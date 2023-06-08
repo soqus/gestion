@@ -62,16 +62,6 @@ header .logo span {
 }
 
 
-label.error{
-    color: darkred;
-}
-
-input.error,select,textarea{
- 
-    border:1px solid red;
-    
-  
-  }
 header .navigation {
     position: relative;
     display: flex;
