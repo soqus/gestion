@@ -48,23 +48,16 @@ session_start();
             ?>
         </div>
     </header>
-    <form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
-    <input type="email" class="form-control" placeholder="Aquí tu email">
-    <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo electrónico con nadie más.</small>
-  </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" placeholder="Aquí tu password">
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input">
-    <label class="form-check-label" for="exampleCheck1">Recordar contraseña</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Registrar</button>
-</form>
+    <div class="card">
+        <div class="register-section">
+            <h2>Registrar nuevo usuario</h2>
+            <form action="php/registro_usuario_be.php" method="POST" class="formulario_register">
+                <input type="email" class="input-field" name="email" placeholder="Aquí tu email">
+                <input type="password" class="input-field" name="pass" placeholder="Aquí tu password">
+                <button>Registrar</button>
+            </form>
+        </div>
+    </div>
 </body>
-
 
 </html>
