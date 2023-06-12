@@ -8,68 +8,6 @@
     scroll-behavior: smooth;
 }
 
-p {
-    font-weight: 300;
-    color: #111;
-}
-
-.banner {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url("img/pexels-karolina-grabowska-7195369.jpg");
-    background-size: cover;
-}
-
-.AgendarHora {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url("img/pexels-karolina-grabowska-7195369.jpg");
-    background-size: cover;
-}
-
-
-
-
-.banner .content {
-    max-width: 900px;
-    text-align: center;
-}
-
-.banner .content h2 {
-    font-size: 5em;
-    color: #fff;
-}
-
-.banner .content p {
-    font-size: 1em;
-    color: #fff;
-}
-
-.btn {
-    font-size: 1em;
-    color: #fff;
-    background: #14d8ea;
-    display: inline-block;
-    padding: 10px 30px;
-    margin-top: 20px;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 2px;
-    transition: 0.5s;
-}
-
-.btn:hover {
-    letter-spacing: 6px;
-}
-
 header {
     position: fixed;
     top: 0;
@@ -146,53 +84,41 @@ header .navigation li a:hover {
 body {
     margin: 0;
     padding: 0;
-  }
-  
-  .menu_lateral {
+}
+
+.menu_lateral {
     background-color: #f2f2f2;
     width: 200px;
     height: 100vh;
     position: fixed;
+    padding-top: 10%;
     left: 0;
     top: 0;
-    padding-top: 15%;
-  }
-  
-  .menu_lateral ul {
+}
+
+.menu_lateral ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-  }
-  
-  .menu_lateral li {
+}
+
+.menu_lateral li {
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-  
-  .menu_lateral li:last-child {
-    border-bottom: none;
-  }
-  
-  .menu_lateral li a {
+}
+
+.menu_lateral li a {
     text-decoration: none;
-    color: #333;
-    display: block;
+    color: #333;    /*color de letras*/
+    display: block; 
+    border: 3px solid black; /*Borde*/
+    padding: 10px; /*separacion de los botones*/
+}
+
+.contenido {
+    margin-left: 200px;
+    /* Ajusta el margen para evitar que se solape con el menú */
+    padding: 20px;
     border: 3px solid black;
-    padding: 10px;
-  }
-  
-  .menu_lateral li a:hover {
-    background-color: #ccc;
-  }
-  
-
-  .contenido {
-    margin-left: 210px; /* Ajusta el margen para evitar que se solape con el menú */
-    margin-top: 10%;
-    margin-right: 20px;
-    height: 500px;
-    padding: 5%;
+    margin-top: 8%;
     
-    border: 3px solid #111;
-
-  }
+}
