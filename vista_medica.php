@@ -24,20 +24,7 @@ if (!isset($_SESSION['usuario'])) {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src=funciones.js></script>
     <script src="contenido.js"></script>
-        <style>
-    .boton-lateral {
-      background-color: #6BB2A2;
-      border-radius: 5%;
-      color: white;
-      padding: 10px;
-      text-decoration: none;
-      text-align: center;
-    }
-
-    .boton-lateral:hover {
-      background-color: darkblue;
-    }
-  </style>
+  
 
 </head>
 

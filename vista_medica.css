@@ -112,10 +112,13 @@ body {
     display: block; 
     border: 3px solid black; /*Borde*/
     padding: 10px; /*separacion de los botones*/
+    background-color: #6BB2A2;
 }
   
   .menu_lateral li a:hover {
-    background-color: #ccc;
+    background-color: #333;
+    color: white;
+
   }
   
 
