@@ -21,7 +21,7 @@ if (!isset($_SESSION['usuario'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PodoClear</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="vista_medica.css">
+   <link rel="stylesheet" href="vista_medica.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src=funciones.js></script>
     <script src="contenido.js"></script>
