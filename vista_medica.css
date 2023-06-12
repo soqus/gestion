@@ -113,12 +113,19 @@ body {
     border: 3px solid black; /*Borde*/
     padding: 10px; /*separacion de los botones*/
 }
+  
+  .menu_lateral li a:hover {
+    background-color: #ccc;
+  }
+  
 
-.contenido {
-    margin-left: 200px;
-    /* Ajusta el margen para evitar que se solape con el menú */
-    padding: 20px;
-    border: 3px solid black;
-    margin-top: 8%;
+  .contenido {
+    margin-left: 210px; /* Ajusta el margen para evitar que se solape con el menú */
+    margin-top: 10%;
+    margin-right: 20px;
+    height: 500px;
+    padding: 5%;
     
-}
+
+  }
+

@@ -48,7 +48,40 @@ session_start();
             });
         });
     </script>
-    
+    <style>
+        .tabla-formato {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-container {
+            max-height: 300px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .table-scroll {
+            overflow: auto;
+            max-height: 100%;
+        }
+
+        .tabla-formato th,
+        .tabla-formato td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tabla-formato th {
+            background-color: #f2f2f2;
+        }
+
+        .btn-right {
+            position: absolute;
+            right: 150px;
+            transform: translateY(-100%);
+        }
+    </style>
 </head>
 
 <body>
