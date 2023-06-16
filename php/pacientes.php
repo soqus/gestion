@@ -28,7 +28,9 @@ session_start();
                     }
                 });
             });
+        });
 
+        $(document).ready(function () {
             $('.form-ficha').on('submit', function (event) {
                 event.preventDefault();
                 var formData = $(this).serialize();
@@ -37,8 +39,6 @@ session_start();
                     type: 'POST',
                     data: formData,
                     success: function (response) {
-                        // Hacer algo con la respuesta si es necesario
-                        // Por ejemplo, mostrar la página "ficha_paciente.php" en una nueva pestaña:
                         $('#tabla-body').html(response);
                     },
                     error: function (xhr, status, error) {
@@ -47,6 +47,7 @@ session_start();
                 });
             });
         });
+
     </script>
     <style>
         .tabla-formato {
@@ -65,21 +66,67 @@ session_start();
             max-height: 100%;
         }
 
-        .tabla-formato th,
-        .tabla-formato td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .tabla-formato th {
-            background-color: #f2f2f2;
-        }
-
         .btn-right {
             position: absolute;
             right: 150px;
-            transform: translateY(-100%);
+            transform: translateY(-260%);
+        }
+
+        #filtrar {
+            margin-bottom: 3%;
+        }
+
+        .posi-inp {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        label,
+        input[type="submit"] {
+            /*display: block;*/
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: lightblue;
+            border: 2px solid #000;
+            color: #fff;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        textarea {
+            resize: vertical;
+            min-width: 70%;
+            min-height: 150px;
+            /* Cambia este valor para ajustar el tamaño por defecto */
+        }
+
+        #rut {
+            margin-left: 46px;
+        }
+
+        #nombre {
+            margin-left: 3px;
+        }
+
+        #apellido {
+            margin-left: 10px;
+        }
+
+        #edad {
+            margin-left: 35px;
+        }
+
+        #enf_base {
+            margin-left: 1px;
+        }
+
+        #email {
+            margin-left: 27px;
         }
     </style>
 </head>
@@ -93,46 +140,61 @@ session_start();
         <form action="php/nuevo_paciente.php">
             <button type="submit" id="nuevo_paciente" class="btn-right">Nuevo Paciente</button>
         </form>
+    </div>
+    <div class="ficha-paciente">
+        <form method="POST">
+            <div>
+                <div class="posi-inp">
+                    <label for="rut">Rut: </label>
+                    <input type="text" id="rut" name="rut" required>
+                </div>
+                <div class="posi-inp">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="posi-inp">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+                <div class="posi-inp">
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad" required>
+                </div>
+            </div>
+            <div>
+                <div class="posi-inp">
+                    <label for="enf_base">Enf. Base:</label>
+                    <input type="text" id="enf_base" name="enf_base" required>
+                </div>
+                <div class="posi-inp">
+                    <label for="Telefono">Telefono:</label>
+                    <input type="text" id="Telefono" name="Telefono" required>
+                </div>
+                <div class="posi-inp">
+                    <label for="direccion">Direccion:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                <div class="posi-inp">
+                    <label for="direccion">Direccion:</label>
+                    <input type="text" id="direccion" name="direccion" required>
+                </div>
+                <div class="posi-inp">
+                    <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+            </div>
+            <div>
+                <div class="posi-inp">
+                    <label for="pro_real">Historial:</label>
+                </div>
+            </div>
+            <textarea id="pro_real" name="pro_real"></textarea>
 
-        <div class="table-container">
-            <table id="tabla" class="tabla-formato">
-                <thead>
-                    <th>Rut</th>
-                    <th>Apellido</th>
-                    <th>Nombre</th>
-                    <th>Edad</th>
-                    <th>Ficha</th>
-                </thead>
-                <tbody id="tabla-body">
-                    <?php
-                    include 'conexion_be.php';
-                    $consulta = "SELECT RUT, NOMBRE, APELLIDO, EDAD FROM pacientes";
-                    $resultado = mysqli_query($conexion, $consulta);
-                    while ($row = mysqli_fetch_assoc($resultado)) {
-                        ?>
-                        <tr>
-                            <form class="form-ficha" action="ficha_paciente.php" method="POST">
-                                <td>
-                                    <input type="text" id="rut_ficha" disabled name="rut_ficha" value="<?php echo $row['RUT']; ?>">
-                                </td>
-                                <td>
-                                    <input type="text" disabled value="<?php echo $row['APELLIDO']; ?>">
-                                </td>
-                                <td>
-                                    <?php echo $row['NOMBRE']; ?>
-                                </td>
-                                <td>
-                                    <?php echo $row['EDAD']; ?>
-                                </td>
-                                <td><button type="submit">Ver ficha</button></td>
-                            </form>
-                        </tr>
-                        <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </div>
+
+
+        </form>
+
+    </div>
 </body>
 
 </html>
