@@ -1,44 +1,40 @@
 <?php
 include 'conexion_be.php';
+// Obtén el rut enviado por AJAX
+$rut = $_POST['rut'];
 
-if (isset($_POST['rut'])) {
-    $rut = $_POST['rut'];
+// Realiza la consulta para obtener los datos del paciente con el rut indicado
+$query = "SELECT * FROM pacientes WHERE rut = '$rut'";
+$result = $conn->query($query);
 
-    // Consulta SQL con filtro por rut
-    $consulta = "SELECT RUT, NOMBRE, APELLIDO, EDAD FROM pacientes WHERE RUT = '$rut'";
-    $resultado = mysqli_query($conexion, $consulta);
+// Verifica si se encontraron resultados
+if ($result->num_rows > 0) {
+    // Obtén los datos del paciente
+    $row = $result->fetch_assoc();
+    $nombre = $row['NOMBRE'];
+    $apellido = $row['APELLIDO'];
+    $edad = $row['EDAD'];
+    $enf_base =$row['ENF_BASE'];
+    $telefono =$row['TELEFONO'];
+    $direccion =$row['DIRECCION'];
+    $email =$row['EMAIL'];
+    $pro_real =$row['PRO_REAL'];
+    
 
-    // Genera la tabla filtrada
 
-    //Para darle estilo a esta tabla tienen que ponerle el mismo identificador a las 2 partes. a la tabla en el if y a la tabla del else.
-    while ($row = mysqli_fetch_assoc($resultado)) {
-        ?>
-        <tr>
-            <td><?php echo $row['RUT']; ?></td>
-            <td><?php echo $row['APELLIDO']; ?></td>
-            <td><?php echo $row['NOMBRE']; ?></td>
-            <td><?php echo $row['EDAD']; ?></td>
-            <td><button class="ver-ficha-btn">Ver Ficha</button>
-</td>
-        </tr>
-        <?php
-    }
-} else {
-    // Si no se proporciona un Rut, muestra todos los registros
-    $consulta = "SELECT RUT, NOMBRE, APELLIDO, EDAD FROM pacientes";
-    $resultado = mysqli_query($conexion, $consulta);
+// Genera la respuesta HTML con los datos del paciente
+$response = '<div>';
+$response .= '<p>Nombre: ' . $nombre . '</p>'; // Suponiendo que $nombre contiene el nombre del paciente obtenido de la base de datos
+$response .= '<p>Apellido: ' . $apellido . '</p>'; // Suponiendo que $apellido contiene el apellido del paciente obtenido de la base de datos
+// Agrega aquí los demás campos del paciente
 
-    // Genera la tabla completa
-    while ($row = mysqli_fetch_assoc($resultado)) {
-        ?>
-        <tr>
-            <td><?php echo $row['RUT']; ?></td>
-            <td><?php echo $row['APELLIDO']; ?></td>
-            <td><?php echo $row['NOMBRE']; ?></td>
-            <td><?php echo $row['EDAD']; ?></td>
-            <td>a</td>
-        </tr>
-        <?php
-    }
+$response .= '</div>';
+
+// Envía la respuesta al cliente
+echo $response;
+}else{
+    echo "No se encontraron resultados para el rut indicado";
 }
+// Cierra la conexión a la base de datos
+$conn->close();
 ?>

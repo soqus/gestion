@@ -35,6 +35,7 @@ session_start();
 </style>
 
 <body>
+    <h2>Horas Agendadas</h2>
     <div class="table_container">
 
     <table id="tabla" class= "tabla-formato">

@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'php/conexion_be.php';
 if (!isset($_SESSION['usuario'])) {
     echo '
     <script>
@@ -12,6 +12,7 @@ if (!isset($_SESSION['usuario'])) {
     die();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,14 +21,10 @@ if (!isset($_SESSION['usuario'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PodoClear</title>
-    <link rel="stylesheet" href="vista_medica.css">
+    <link rel="stylesheet" href="pacientes.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src=funciones.js></script>
-    
-  
-
 </head>
-
 <body>
     <!--navigation-->
     <header class="sticky">
@@ -68,10 +65,51 @@ if (!isset($_SESSION['usuario'])) {
     </ul>
   </div>
 
-  <div class="contenido" id="contenido">
-    <!-- Contenido inicial -->
-    <h2>Bienvenido</h2>
-    <p>Seleccione una opción del menú lateral para ver más información.</p>
-  </div>
+<div class="botones">
+<form action="" method="POST">
+    <input type="text" placeholder="12345678-9">
+    <button type="submit">Filtrar</button>
+</form>
+        <a href="" id="nuevo_paciente">Nuevo paciente</a>
+    <h3>Pacientes</h3>
+</div>
+  <div class="table_container">
+    <table id="tabla" class= "tabla-formato">
+        <thead>
+            <th>Rut</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Fichas</th>
+        </thead>
+        <tbody>
+            <?php
+            $consulta = "SELECT *  FROM pacientes";
+            $resultado = mysqli_query($conexion, $consulta);
+            while ($row = mysqli_fetch_assoc($resultado)) {
+                ?>
+                <tr>
+                    <td>
+                        <?php echo $row['RUT']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['NOMBRE']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['APELLIDO']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['EDAD']; ?>
+                    </td>
+                    <td>Ver ficha</td>
+                </tr>
+                <?php
+            }
+            ?>
+
+        </tbody>
+
+    </table>
+        </div>
   </body>
 </html>

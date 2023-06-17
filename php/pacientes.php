@@ -12,43 +12,30 @@ session_start();
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#form-filtrar').on('submit', function (event) {
-                event.preventDefault();
-                var formData = $(this).serialize();
-                $.ajax({
-                    url: 'php/filtrar.php',
-                    type: 'POST',
-                    data: formData,
-                    success: function (response) {
-                        $('#tabla-body').html(response);
-                    },
-                    error: function (xhr, status, error) {
-                        console.log(error);
-                    }
-                });
-            });
-        });
+  $(document).ready(function() {
+    $('#form-filtrar').submit(function(event) {
+      event.preventDefault(); // Evita que el formulario se envíe de forma convencional
 
-        $(document).ready(function () {
-            $('.form-ficha').on('submit', function (event) {
-                event.preventDefault();
-                var formData = $(this).serialize();
-                $.ajax({
-                    url: 'php/ficha_paciente.php',
-                    type: 'POST',
-                    data: formData,
-                    success: function (response) {
-                        $('#tabla-body').html(response);
-                    },
-                    error: function (xhr, status, error) {
-                        console.log(error);
-                    }
-                });
-            });
-        });
+      // Obtén el valor del rut ingresado
+      var rut = $('#rut_ficha').val();
 
-    </script>
+      // Realiza la solicitud AJAX al archivo PHP que obtiene los datos del paciente
+      $.ajax({
+        url: 'php/filtrar.php', // Ruta al archivo PHP que obtiene los datos del paciente
+        method: 'POST',
+        data: { rut: rut }, // Envía el rut al servidor
+        success: function(response) {
+          // Actualiza el contenido del contenedor con los datos del paciente recibidos en la respuesta
+          $('#paciente-info').html(response);
+        },
+        error: function() {
+          alert('Error al obtener los datos del paciente');
+        }
+      });
+    });
+  });
+</script>
+
     <style>
         .tabla-formato {
             width: 100%;
@@ -77,7 +64,7 @@ session_start();
         }
 
         .posi-inp {
-            display: inline-block;
+            
             margin-right: 10px;
             margin-bottom: 10px;
         }
@@ -141,7 +128,7 @@ session_start();
             <button type="submit" id="nuevo_paciente" class="btn-right">Nuevo Paciente</button>
         </form>
     </div>
-    <div class="ficha-paciente">
+    <div id="ficha-paciente">
         <form method="POST">
             <div>
                 <div class="posi-inp">
@@ -169,10 +156,6 @@ session_start();
                 <div class="posi-inp">
                     <label for="Telefono">Telefono:</label>
                     <input type="text" id="Telefono" name="Telefono" required>
-                </div>
-                <div class="posi-inp">
-                    <label for="direccion">Direccion:</label>
-                    <input type="text" id="direccion" name="direccion" required>
                 </div>
                 <div class="posi-inp">
                     <label for="direccion">Direccion:</label>
