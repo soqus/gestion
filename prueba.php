@@ -4,3 +4,23 @@
       $('.tbl-header').css({'padding-right':scrollWidth});
     }).resize();
     };
+
+
+
+
+    echo '
+<script>
+
+    window.open ("https://sandbox.flow.cl/uri/WCJT63Jtv", "_blank");
+    </script>
+    ';
+
+
+    
+if ($resultado) {
+    echo '
+            <script>
+            window.location="../index.php";
+            </script>
+        ';
+}
