@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include 'php/conexion_be.php';
 if (!isset($_SESSION['usuario'])) {
     echo '
     <script>
@@ -12,6 +12,7 @@ if (!isset($_SESSION['usuario'])) {
     die();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,14 +21,10 @@ if (!isset($_SESSION['usuario'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PodoClear</title>
-    <link rel="stylesheet" href="vista_medica.css">
+    <link rel="stylesheet" href="horas_agendadas.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src=funciones.js></script>
-    
-  
-
 </head>
-
 <body>
     <!--navigation-->
     <header class="sticky">
@@ -62,16 +59,57 @@ if (!isset($_SESSION['usuario'])) {
     </header>
     <div class="menu_lateral">
     <ul>
-    <li><a href="horas_agendadas.php">Horas Agendadas</a></li>
-      <li><a href="pacientes.php">Pacientes</a></li>
+    <li><a href="#" class="boton-lateral" data-target="php/horas_agendadas">Horas Agendadas</a></li>
+      <li><a href="pacientes.php" class="boton-lateral">Pacientes</a></li>
       <li><a href="registro.php">Registrar Usuario</a></li>
     </ul>
   </div>
+    <div class="table_container">
+    <h2 id="horas-agendadas">Horas Agendadas</h2>
+    <table id="tabla" class= "tabla-formato">
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Rut</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Motivo</th>
+        </thead>
+        <tbody>
+            <?php
+            $consulta = "SELECT NOMBRE, APELLIDO, RUT, FECHA, HORA, MOTIVO FROM horas";
+            $resultado = mysqli_query($conexion, $consulta);
+            while ($row = mysqli_fetch_assoc($resultado)) {
+                ?>
+                <tr>
+                    <td>
+                        <?php echo $row['NOMBRE']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['APELLIDO']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['RUT']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['FECHA']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['HORA']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['MOTIVO']; ?>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
 
-  <div class="contenido" id="contenido">
-    <!-- Contenido inicial -->
-    <h2>Bienvenido</h2>
-    <p>Seleccione una opción del menú lateral para ver más información.</p>
-  </div>
-  </body>
-</html>
+        </tbody>
+
+    </table>
+        </div>
+
+
+</body>
+  </html>

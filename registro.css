@@ -97,13 +97,50 @@ header .navigation li a:hover {
     color: #14d8ea;
 }
 
+.menu_lateral {
+  background-color: #f2f2f2;
+  width: 200px;
+  height: 100vh;
+  position: fixed;
+  padding-top: 10%;
+  left: 0;
+  top: 0;
+}
+
+.menu_lateral ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu_lateral li {
+  padding: 10px;
+}
+
+.menu_lateral li a {
+  text-decoration: none;
+  color: #333;
+  /*color de letras*/
+  display: block;
+  border: 3px solid black;
+  /*Borde*/
+  padding: 10px;
+  /*separacion de los botones*/
+  background-color: #6BB2A2;
+}
+
+.menu_lateral li a:hover {
+  background-color: #333;
+  color: white;
+
+}
+
 
 
 
 
 
 body {
-    background-color: #f2f2f2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -113,7 +150,7 @@ body {
   }
   
   .card {
-    background-color: white;
+    background-color: rgb(207, 207, 207);
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 300px;

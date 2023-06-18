@@ -108,27 +108,74 @@ body {
 
 .menu_lateral li a {
     text-decoration: none;
-    color: #333;    /*color de letras*/
-    display: block; 
-    border: 3px solid black; /*Borde*/
-    padding: 10px; /*separacion de los botones*/
+    color: #333;
+    /*color de letras*/
+    display: block;
+    border: 3px solid black;
+    /*Borde*/
+    padding: 10px;
+    /*separacion de los botones*/
     background-color: #6BB2A2;
 }
 
-  
-  .menu_lateral li a:hover {
+.menu_lateral li a:hover {
     background-color: #333;
     color: white;
 
+}
+
+table {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    table-layout: fixed;
+}
+.tabla-formato{
+    border-bottom: 1px solid;
+    text-align: center;
+}
+.tabla-formato th{
+    background-color: #838383;
+    padding: 8px;
+    border-bottom: 1px solid #000000;
+}
+  .tabla-formato td {
+    background-color: #cfcfcf;
+    padding: 8px;
+    border-bottom: 1px solid #000000;
   }
+.table_container {
+    max-height: 500px;
+    max-width: 90%;
+    overflow-y: auto;
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 2%;
+}
 
-  .contenido {
-    margin-left: 210px; /* Ajusta el margen para evitar que se solape con el menú */
-    margin-top: 10%;
-    margin-right: 20px;
-    height: 500px;
-    padding: 5%;
-    
+.table-scroll {
+    overflow: auto;
+    max-height: 100%;
+}
 
-  }
-
+form{
+    display: inline-block;
+}
+#pacientes{
+    margin-left: 40%;
+}
+#nuevo_paciente{
+    text-decoration: none;
+    color: #333;
+    /*color de letras*/
+    border: 2px solid black;
+    /*Borde*/
+    padding: 10px;
+    /*separacion de los botones*/
+    background-color: #6BB2A2;
+    margin-left: 85%;
+}
+.botones{
+    margin-top: 7%;
+    margin-left: 15%;
+}

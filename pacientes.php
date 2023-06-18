@@ -21,9 +21,8 @@ if (!isset($_SESSION['usuario'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PodoClear</title>
-    <link rel="stylesheet" href="registro.css" type="text/css">
+    <link rel="stylesheet" href="pacientes.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src=funciones.js></script>
 </head>
 
 <body>
@@ -63,22 +62,57 @@ if (!isset($_SESSION['usuario'])) {
     <div class="menu_lateral">
         <ul>
             <li><a href="horas_agendadas.php">Horas Agendadas</a></li>
-            <li><a href="pacientes.php" class="boton-lateral">Pacientes</a></li>
+            <li><a href="pacientes.php">Pacientes</a></li>
             <li><a href="registro.php">Registrar Usuario</a></li>
         </ul>
     </div>
-    <div class="table_container">
-        <div class="card">
-            <div class="register-section">
-                <h2>Registrar nuevo usuario</h2>
-                <form action="php/registro_usuario_be.php" method="POST" class="formulario_register">
-                    <input type="email" class="input-field" name="email" placeholder="Aquí tu email">
-                    <input type="password" class="input-field" name="pass" placeholder="Aquí tu password">
-                    <button>Registrar</button>
-                </form>
-            </div>
-        </div>
+
+    <div class="botones">
+        
+        <a href="nuevo_paciente.php" id="nuevo_paciente">Nuevo paciente</a>
+        <h1 id="pacientes">Pacientes</h1>
     </div>
+    <div class="table_container">
+        <table id="tabla" class="tabla-formato">
+            <thead>
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Fichas</th>
+            </thead>
+            <tbody>
+                <?php
+                $consulta = "SELECT *  FROM pacientes";
+                $resultado = mysqli_query($conexion, $consulta);
+                while ($row = mysqli_fetch_assoc($resultado)) {
+                    ?>
+                    <tr>
+                        <td id="rut_paciente">
+                            <?php echo $row['RUT']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['NOMBRE']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['APELLIDO']; ?>
+                        </td>
+                        <td>
+                            <?php echo $row['EDAD']; ?>
+                        </td>
+                        <td><a href="#" class="ver_ficha">Ver Ficha</a></td>
+                    </tr>
+                    <?php
+                }
+                ?>
+
+            </tbody>
+
+        </table>
+    </div>
+    <script src=funciones.js></script>
+    <script src=ver_ficha.js></script>
+
 </body>
 
 </html>

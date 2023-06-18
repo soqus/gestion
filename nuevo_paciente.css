@@ -108,27 +108,93 @@ body {
 
 .menu_lateral li a {
     text-decoration: none;
-    color: #333;    /*color de letras*/
-    display: block; 
-    border: 3px solid black; /*Borde*/
-    padding: 10px; /*separacion de los botones*/
+    color: #333;
+    /*color de letras*/
+    display: block;
+    border: 3px solid black;
+    /*Borde*/
+    padding: 10px;
+    /*separacion de los botones*/
     background-color: #6BB2A2;
 }
 
-  
-  .menu_lateral li a:hover {
+.menu_lateral li a:hover {
     background-color: #333;
     color: white;
 
-  }
+}
+#titulo{
+    text-align: center;
+}
+.table_container {
+max-width: 1000px;
+height: 600px;
+    margin-top: 7%;
+    margin-left: 23%;
+    margin-right: 2%;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #d8d8d8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.linea_1{
+    margin-left: 5px;
+    margin-bottom: 5px;
+}
+.linea_2{
+    margin-left: 5px;
+}
 
-  .contenido {
-    margin-left: 210px; /* Ajusta el margen para evitar que se solape con el menú */
-    margin-top: 10%;
-    margin-right: 20px;
-    height: 500px;
-    padding: 5%;
+
+.apartado{
+    display: inline-block;
+}
+#area{
+    margin-left: 10px;
+    width: 98%;
+    height: 380px;
+    margin-bottom: 30px;
     
+}
+#pro_real{
+    width: 100%;
+  height: 100%; 
+  box-sizing: border-box;
 
-  }
+}
 
+#historial{
+    text-align: center;
+    margin-top: 1%;
+}
+#rut{
+    margin-left: 45px;
+}
+#nombre{
+    margin-left: 3px;
+}
+#apellido{
+    margin-left: 11px;
+}
+#edad{
+    margin-left: 3px;
+}
+
+#guardar {
+    text-decoration: none;
+    color: #333;
+    /*color de letras*/
+    border: 3px solid black;
+    /*Borde*/
+    padding: 10px;
+    margin-top: 99%;
+    margin-left: 50px;
+    /*separacion de los botones*/
+    background-color: #6BB2A2;
+}
+
+#guardar:hover {
+    background-color: #333;
+    color: white;
+
+}
