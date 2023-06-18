@@ -53,7 +53,7 @@ session_start();
   </header>
   <section>
     /*falta terminarlo */
-  <form action="" method="POST">
+  <form action="php/registro_hora_be.php" method="POST">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required>
 
@@ -66,8 +66,8 @@ session_start();
     <input type="date" name="fecha" id="fecha" placeholder="Introduce una fecha" required min=<?php $hoy=date("Y-m-d"); echo $hoy;?> />
     <div class="error-message" id="fecha_error"></div>
 
-    <label for="hora_consulta">Hora de consulta:</label>
-    <select id="hora_consulta" name="hora_consulta" required>
+    <label for="hora">Hora de consulta:</label>
+    <select id="hora" name="hora" required>
       <option disabled selected>Selecciona una hora</option>
       <option value="09:00">9:00</option>
       <option value="10:00">10:00</option>

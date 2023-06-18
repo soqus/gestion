@@ -21,8 +21,9 @@ if (!isset($_SESSION['usuario'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PodoClear</title>
-    <link rel="stylesheet" href="pacientes.css" type="text/css">
+    <link rel="stylesheet" href="nuevo_paciente.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
 </head>
 
 <body>
@@ -67,52 +68,57 @@ if (!isset($_SESSION['usuario'])) {
         </ul>
     </div>
 
-    <div class="botones">
-        
-        <a href="nuevo_paciente.php" id="nuevo_paciente">Nuevo paciente</a>
-        <h1 id="pacientes">Pacientes</h1>
-    </div>
     <div class="table_container">
-        <table id="tabla" class="tabla-formato">
-            <thead>
-                <th>Rut</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Edad</th>
-                <th>Fichas</th>
-            </thead>
-            <tbody>
-                <?php
-                $consulta = "SELECT *  FROM pacientes";
-                $resultado = mysqli_query($conexion, $consulta);
-                while ($row = mysqli_fetch_assoc($resultado)) {
-                    ?>
-                    <tr>
-                        <td id="rut_paciente">
-                            <?php echo $row['RUT']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row['NOMBRE']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row['APELLIDO']; ?>
-                        </td>
-                        <td>
-                            <?php echo $row['EDAD']; ?>
-                        </td>
-                        <td><a href="#" class="ver_ficha">Ver Ficha</a></td>
-                    </tr>
-                    <?php
-                }
-                ?>
+        <div class="card" id="ficha_nuevo">
+            <h3 id="titulo">Paciente nuevo</h3>
+            <div class="linea_1">
+                <div class="apartado">
+                    <label for="rut">Rut: </label>
+                    <input type="text" placeholder="Ingrese Rut" name="rut" id="rut">
+                </div>
+                <div class="apartado">
+                    <label for="nombre">Nombre: </label>
+                    <input type="text" placeholder="Ingrese Nombre" name="nombre" id="nombre">
+                </div>
+                <div class="apartado">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" placeholder="Ingrese Apellido" name="apellido" id="apellido">
+                </div>
+                <div class="apartado">
+                    <label for="edad">Edad: </label>
+                    <input type="number" placeholder="Ingrese Edad" name="edad" id="edad">
+                </div>
+            </div>
+            <div class="linea_2">
+                <div class="apartado">
+                    <label for="enf_base">Enf. Base: </label>
+                    <input type="text" placeholder="Ingrese una enfermedad base" name="enf_base" id="enf_base">
+                </div>
+                <div class="apartado">
+                    <label for="telefono">Telefono: </label>
+                    <input type="text" placeholder="Ingrese telefono" name="telefono" id="telefono">
+                </div>
+                <div class="apartado">
+                    <label for="direccion">Direccion: </label>
+                    <input type="text" placeholder="Ingrese direccion" name="direccion" id="direccion">
+                </div>
+                <div class="apartado">
+                    <label for="email">Email: </label>
+                    <input type="text" placeholder="Ingrese email" name="email" id="email">
+                </div>
+                <div id="historial">
+                    <h3>Historial: </h3>
+                </div>
+                <div id="area">
+                <textarea type="text" placeholder="Ingrese procesos realizados" name="pro_real" id="pro_real"></textarea>
+                </div>
+                
+            </div>
+            
 
-            </tbody>
-
-        </table>
+        </div>
+        <a href="#" id="guardar">Guardar</a>
     </div>
     <script src=funciones.js></script>
-    <script src=ver_ficha.js></script>
-
 </body>
-
 </html>

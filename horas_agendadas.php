@@ -65,28 +65,23 @@ if (!isset($_SESSION['usuario'])) {
     </ul>
   </div>
     <div class="table_container">
-    <h2>Horas Agendadas</h2>
+    <h2 id="horas-agendadas">Horas Agendadas</h2>
     <table id="tabla" class= "tabla-formato">
         <thead>
-            <th>id</th>
             <th>Nombre</th>
             <th>Apellido</th>
-            <th>Enfermedad Base</th>
-            <th>Celular</th>
-            <th>Dirección</th>
-            <th>F. Nacimiento</th>
-            <th>Motivo Consulta</th>
+            <th>Rut</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Motivo</th>
         </thead>
         <tbody>
             <?php
-            $consulta = "SELECT ID, NOMBRE, APELLIDO, ENFERMEDAD, CELULAR, DIRECCION, FECHA, MOTIVO FROM horas";
+            $consulta = "SELECT NOMBRE, APELLIDO, RUT, FECHA, HORA, MOTIVO FROM horas";
             $resultado = mysqli_query($conexion, $consulta);
             while ($row = mysqli_fetch_assoc($resultado)) {
                 ?>
                 <tr>
-                    <td>
-                        <?php echo $row['ID']; ?>
-                    </td>
                     <td>
                         <?php echo $row['NOMBRE']; ?>
                     </td>
@@ -94,16 +89,13 @@ if (!isset($_SESSION['usuario'])) {
                         <?php echo $row['APELLIDO']; ?>
                     </td>
                     <td>
-                        <?php echo $row['ENFERMEDAD']; ?>
-                    </td>
-                    <td>
-                        <?php echo $row['CELULAR']; ?>
-                    </td>
-                    <td>
-                        <?php echo $row['DIRECCION']; ?>
+                        <?php echo $row['RUT']; ?>
                     </td>
                     <td>
                         <?php echo $row['FECHA']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['HORA']; ?>
                     </td>
                     <td>
                         <?php echo $row['MOTIVO']; ?>
