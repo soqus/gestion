@@ -155,6 +155,14 @@ section {
 }
 
 .fila .colu50 {
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    padding: 1%;
+    width: 48%;
+    background-color: #f3f2f2;
+}
+.fila .colu51{
     position: relative;
     width: 48%;
 }
@@ -171,14 +179,16 @@ section {
     font-size: 1.5em;
 }
 
-.fila .colu50 .imgBx {
+.fila .colu51 .imgBx {
     position: relative;
     width: 100%;
     min-height: 500px;
     height: 100%;
 }
 
-.fila .colu50 .imgBx img {
+.fila .colu51 .imgBx img {
+    border: 1px solid black;
+    border-radius: 10px;
     position: absolute;
     top: 0;
     left: 0;
@@ -188,6 +198,9 @@ section {
 }
 
 .container {
+    align-items: center;
+    text-align: center;
+    margin-left: 34%;
     margin-top: 20px;
     background-color: #fff;
     border-radius: 5px;
@@ -303,6 +316,7 @@ section {
 }
 
 .copyrightText {
+    background-color: #f3f2f2;
     padding: 8px 40px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -325,8 +339,137 @@ section {
     border-radius: 10px;
 }
 
-#informa{
-    margin: 5%;
-    width: 50px !important; 
-    height: 50px !important;
+.fila_1 {
+
+    text-align: center;
+    display: flex;
+    /* Centrar verticalmente */
+
+
 }
+
+.imagen {
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 1%;
+    height: 50%;
+    width: 50%;
+}
+.imagen-4{
+    border: 1px solid black;
+    border-radius: 10px;
+    margin-top: 4%;
+    height: 50%;
+    width: 50%;
+}
+
+.carta-1 {
+    background-color: #deefb9;
+    margin-left: 7%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    min-height: 450px;
+    max-width: 40%;
+    display: inline-block;
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* Sombra */
+}
+
+.carta-2 {
+    background-color: #deefb9;
+    margin-left: 7%;
+    margin-top: 2%;
+    height: 630PX;
+    max-width: 40%;
+    display: inline-block;
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.carta-3{
+    background-color: #deefb9;
+    margin-left: 7%;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    min-height: 700px;
+    max-width: 40%;
+    display: inline-block;
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.cuerpo-3{
+    background-color: #e4e185;
+    padding: 3%;
+    height: 380px;
+    margin: 5% 2% 2% 2% ;
+    text-align: justify;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.carta-4{
+    background-color: #deefb9;
+    margin-left: 7%;
+    margin-top: 2%;
+    height: 720PX;
+    max-width: 40%;
+    display: inline-block;
+    border: solid 2px black;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+.cuerpo-4{
+    background-color: #e4e185;
+    padding: 3%;
+    height: 380px;
+    margin: 15% 2% 0% 2% ;
+    text-align: justify;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.media-body{
+    background-color: #e4e185;
+    padding: 3%;
+    margin: 5% 2% 2% 2% ;
+    text-align: justify;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.texto-2{
+    background-color: #e4e185;
+    padding: 3%;
+    height: 355px;
+    margin: 9% 2% 0% 2% ;
+    text-align: justify;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+.titulo{
+    text-align: center;
+}
+body {
+    background-image: url('img/pexels-karolina-grabowska-7195369.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/pexels-karolina-grabowska-7195369.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+    opacity: 0.8; /* Ajusta la opacidad según tus preferencias */
+    z-index: -1;
+  }
+  
+  .contact{
+    text-align: center;
+    align-items: center;
+  }

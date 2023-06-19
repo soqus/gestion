@@ -70,7 +70,7 @@ session_start();
                     del tratamiento.
                 </p>
             </div>
-            <div class="colu50">
+            <div class="colu51">
                 <div class="imgBx">
                     <img src="img/pexels-cedric-fauntleroy-4270088.jpg" alt="doctora">
                 </div>
@@ -78,7 +78,7 @@ session_start();
         </div>
     </section>
     <section class="contact" id="contacto">
-        <h2 class="tituloText"><span>C</span>contáctanos</h2>
+        <h2 class="tituloText"><span>C</span>ontáctanos</h2>
         <p>Si tienes dudas o deseas mas información acerca de nuestros servicios e instalaciones, escribenos.</p>
         <div class="container">
             <form id="form" class="form">
