@@ -59,7 +59,7 @@ if (!isset($_SESSION['usuario'])) {
     </header>
     <div class="menu_lateral">
     <ul>
-    <li><a href="#" class="boton-lateral" data-target="php/horas_agendadas">Horas Agendadas</a></li>
+    <li><a href="#" class="boton-lateral">Horas Agendadas</a></li>
       <li><a href="pacientes.php" class="boton-lateral">Pacientes</a></li>
       <li><a href="registro.php">Registrar Usuario</a></li>
     </ul>
@@ -77,7 +77,7 @@ if (!isset($_SESSION['usuario'])) {
         </thead>
         <tbody>
             <?php
-            $consulta = "SELECT NOMBRE, APELLIDO, RUT, FECHA, HORA, MOTIVO FROM horas";
+            $consulta = "SELECT NOMBRE, APELLIDO, RUT, FECHA, HORA, MOTIVO FROM hora";
             $resultado = mysqli_query($conexion, $consulta);
             while ($row = mysqli_fetch_assoc($resultado)) {
                 ?>

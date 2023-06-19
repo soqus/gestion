@@ -23,7 +23,7 @@ $resultado = mysqli_query($conexion, $sql);
 echo '
 <script>
 
-    window.open ("https://sandbox.flow.cl/uri/WCJT63Jtv", "_blank");
+    window.open ("https://sandbox.flow.cl/uri/ntGLtPwp4", "_blank");
     </script>
     ';
 
